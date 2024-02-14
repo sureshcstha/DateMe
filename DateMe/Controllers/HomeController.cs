@@ -11,9 +11,9 @@ namespace DateMe.Controllers
             return View();
         }
 
-        public IActionResult FillOutApplication()
+        public IActionResult DatingApplication()
         {
-            return View("DatingApplication");
+            return View();
         }
     }
 }
