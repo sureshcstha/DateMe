@@ -9,5 +9,6 @@
         public string PhoneNumber { get; set; }
         public string Major {  get; set; }
         public string Occupation { get; set; }
+        public bool CreeperStalker { get; set; }
     }
 }

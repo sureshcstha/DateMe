@@ -4,29 +4,31 @@
 @{
 }
 
+@model Application
+
 <h1>Dating Application</h1>
 
 <form>
-    <label>First Name:</label>
-    <input />
+    <label asp-for="FirstName">First Name:</label>
+    <input asp-for="FirstName"/>
     <br />
-    <label>Last Name:</label>
-    <input />
+    <label asp-for="LastName">Last Name:</label>
+    <input asp-for="LastName" />
     <br />
-    <label>Age:</label>
-    <input />
+    <label asp-for="Age">Age:</label>
+    <input asp-for="Age" />
     <br />
-    <label>Phone:</label>
-    <input />
+    <label asp-for="PhoneNumber">Phone:</label>
+    <input asp-for="PhoneNumber" />
     <br />
-    <label>Major:</label>
-    <input />
+    <label asp-for="Major">Major:</label>
+    <input asp-for="Major" />
     <br />
-    <label>Occupation:</label>
-    <input />
+    <label asp-for="Occupation">Occupation:</label>
+    <input asp-for="Occupation" />
     <br />
-    <label>Are you a Creeper and/or Stalker?</label>
-    <select>
+    <label asp-for="CreeperStalker">Are you a Creeper and/or Stalker?</label>
+    <select asp-for="CreeperStalker">
         <option value="true">Yes</option>
         <option value="false">No</option>
     </select>
