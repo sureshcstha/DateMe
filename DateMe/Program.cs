@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DatingApplicationContex>(options =>
 {
-    options.UseSqlite(builder.Configuration["ConnectionStrings: DatingConnection"]);
+    options.UseSqlite(builder.Configuration["ConnectionStrings:DatingConnection"]);
 });
 
 var app = builder.Build();
