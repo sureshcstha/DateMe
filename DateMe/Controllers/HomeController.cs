@@ -18,7 +18,7 @@ namespace DateMe.Controllers
         [HttpPost]
         public IActionResult DatingApplication(Application response)
         {
-            return View("Confirmation");
+            return View("Confirmation", response);
         }
     }
 }
