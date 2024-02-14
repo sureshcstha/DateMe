@@ -10,5 +10,10 @@ namespace DateMe.Controllers
         {
             return View();
         }
+
+        public IActionResult FillOutApplication()
+        {
+            return View("DatingApplication");
+        }
     }
 }
