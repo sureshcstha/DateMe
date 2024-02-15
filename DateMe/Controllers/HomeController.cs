@@ -19,6 +19,10 @@ namespace DateMe.Controllers
         [HttpGet]
         public IActionResult DatingApplication()
         {
+            ViewBag.Majors = _context.Majors
+                .OrderBy(x => x.MajorName)
+                .ToList();
+
             return View();
         }
         [HttpPost]
