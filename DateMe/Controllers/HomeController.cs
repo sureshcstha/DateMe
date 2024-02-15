@@ -29,5 +29,15 @@ namespace DateMe.Controllers
 
             return View("Confirmation", response);
         }
+
+        public IActionResult WaitList() 
+        {
+            //Linq
+            var applications = _context.Applications
+                .Where(x => x.CreeperStalker == false)
+                .OrderBy(x => x.LastName).ToList();
+
+            return View(applications);
+        }
     }
 }

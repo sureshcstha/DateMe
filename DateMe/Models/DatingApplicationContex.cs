@@ -2,7 +2,7 @@
 
 namespace DateMe.Models
 {
-    public class DatingApplicationContex : DbContext
+    public class DatingApplicationContex : DbContext //Liaison from the app to the database
     {
         public DatingApplicationContex(DbContextOptions<DatingApplicationContex> options) : base (options) // constructor
         { 
