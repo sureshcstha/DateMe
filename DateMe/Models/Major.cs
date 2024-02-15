@@ -1,4 +1,6 @@
-﻿namespace DateMe.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DateMe.Models
 {
     public class Major
     {

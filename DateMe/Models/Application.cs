@@ -13,7 +13,7 @@ namespace DateMe.Models
         public int Age { get; set; }
         public string PhoneNumber { get; set; }
         [ForeignKey("MajorId")]
-        public string MajorId {  get; set; }
+        public int MajorId {  get; set; }
         public Major Major { get; set; }
         public bool CreeperStalker { get; set; }
     }
