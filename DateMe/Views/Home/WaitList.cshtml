@@ -4,6 +4,8 @@
 @{
 }
 
+@model Application
+
 <table>
     <tr>
         <th>First name</th>
@@ -13,9 +15,13 @@
         <th>Major</th>
         <th>Creeper and/or Stalker</th>
     </tr>
+
     <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
+        <td>@Model.FirstName</td>
+        <td>@Model.LastName</td>
+        <td>@Model.Age</td>
+        <td>@Model.PhoneNumber</td>
+        <td>@Model.Major</td>
+        <td>@Model.CreeperStalker</td>
     </tr>
 </table>
