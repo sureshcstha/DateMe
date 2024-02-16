@@ -43,5 +43,14 @@ namespace DateMe.Controllers
 
             return View(applications);
         }
+
+        public IActionResult Edit()
+        {
+            ViewBag.Majors = _context.Majors
+                .OrderBy(x => x.MajorName)
+                .ToList();
+
+            return View("DatingApplication");
+        }
     }
 }
