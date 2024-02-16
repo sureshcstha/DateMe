@@ -45,10 +45,10 @@ namespace DateMe.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int recordId)
+        public IActionResult Edit(int id)
         {
             var recordToEdit = _context.Applications
-                .Single(x => x.ApplicationID == recordId);
+                .Single(x => x.ApplicationID == id);
 
             ViewBag.Majors = _context.Majors
                 .OrderBy(x => x.MajorName)
@@ -62,7 +62,8 @@ namespace DateMe.Controllers
         {
             _context.Update(updatedInfo);
             _context.SaveChanges();
-            return View();
+
+            return RedirectToAction("WaitList");
         }
 
     }
