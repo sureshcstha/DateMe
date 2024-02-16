@@ -44,8 +44,11 @@ namespace DateMe.Controllers
             return View(applications);
         }
 
-        public IActionResult Edit()
+        public IActionResult Edit(int recordId)
         {
+            var recordToEdit = _context.Applications
+                .Where(x => x.ApplicationID == recordId);
+
             ViewBag.Majors = _context.Majors
                 .OrderBy(x => x.MajorName)
                 .ToList();
