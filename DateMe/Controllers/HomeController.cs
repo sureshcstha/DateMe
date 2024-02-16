@@ -44,16 +44,26 @@ namespace DateMe.Controllers
             return View(applications);
         }
 
+        [HttpGet]
         public IActionResult Edit(int recordId)
         {
             var recordToEdit = _context.Applications
-                .Where(x => x.ApplicationID == recordId);
+                .Single(x => x.ApplicationID == recordId);
 
             ViewBag.Majors = _context.Majors
                 .OrderBy(x => x.MajorName)
                 .ToList();
 
-            return View("DatingApplication");
+            return View("DatingApplication", recordToEdit);
         }
+
+        [HttpPost]
+        public IActionResult Edit(Application updatedInfo)
+        {
+            _context.Update(updatedInfo);
+            _context.SaveChanges();
+            return View();
+        }
+
     }
 }
