@@ -66,5 +66,23 @@ namespace DateMe.Controllers
             return RedirectToAction("WaitList");
         }
 
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var recordToDelete = _context.Applications
+                .Single(x => x.ApplicationID == id);
+
+            return View(recordToDelete);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Application deleteInfo)
+        {
+            _context.Applications.Remove(deleteInfo);
+            _context.SaveChanges();
+
+            return RedirectToAction("WaitList");
+        }
+
     }
 }
