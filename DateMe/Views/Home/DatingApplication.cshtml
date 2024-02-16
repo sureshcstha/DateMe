@@ -10,6 +10,7 @@
 
 <form method="post">
     <input type="hidden" asp-for="ApplicationID" />
+
     <label asp-for="FirstName">First Name:</label>
     <input asp-for="FirstName"/>
     <br />
@@ -37,5 +38,7 @@
     </select>
     <br />
     <button type="submit">Submit Application</button>
+
+    <div asp-validation-summary="All"></div>
 
 </form>

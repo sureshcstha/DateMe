@@ -23,15 +23,26 @@ namespace DateMe.Controllers
                 .OrderBy(x => x.MajorName)
                 .ToList();
 
-            return View();
+            return View("DatingApplication", new Application());
         }
         [HttpPost]
         public IActionResult DatingApplication(Application response)
         {
-            _context.Applications.Add(response); // add record to the database
-            _context.SaveChanges();
+            if(ModelState.IsValid)
+            {
+                _context.Applications.Add(response); // add record to the database
+                _context.SaveChanges();
 
-            return View("Confirmation", response);
+                return View("Confirmation", response);
+            } 
+            else // invalid data
+            {
+                ViewBag.Majors = _context.Majors
+                    .OrderBy(x => x.MajorName)
+                    .ToList();
+
+                return View(response);
+            }
         }
 
         public IActionResult WaitList() 
